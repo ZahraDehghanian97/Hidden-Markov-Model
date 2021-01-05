@@ -1,4 +1,3 @@
-1000
 rainy,yes
 foggy,no
 sunny,no
