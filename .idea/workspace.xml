@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="31c7a52a-0a55-414a-b0c7-dc3364aa888d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/equal.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ideal.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Test2.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/forward_backward.py" beforeDir="false" afterPath="$PROJECT_DIR$/forward_backward.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/coins1.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/random1.json" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,14 +22,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="json" value="3" />
+          <entry key="json" value="4" />
           <entry key="py" value="2" />
           <entry key="txt" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JSON" value="3" />
+          <entry key="JSON" value="4" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="Python" value="2" />
         </counts>
@@ -40,31 +37,30 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="19" />
-          <entry key="json" value="70" />
-          <entry key="py" value="658" />
+          <entry key="json" value="102" />
+          <entry key="py" value="749" />
           <entry key="txt" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JSON" value="70" />
+          <entry key="JSON" value="102" />
           <entry key="PLAIN_TEXT" value="20" />
-          <entry key="Python" value="658" />
+          <entry key="Python" value="749" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/forward_backward.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2116">
-              <caret column="11" selection-start-column="11" selection-end-column="11" />
+            <state relative-caret-position="726">
+              <caret line="120" column="26" lean-forward="true" selection-start-line="120" selection-start-column="26" selection-end-line="120" selection-end-column="26" />
               <folding>
-                <element signature="e#3765#4615#0" />
-                <marker date="1609846366218" expanded="true" signature="109:118" ph="..." />
-                <marker date="1609846366218" expanded="true" signature="4391:4564" ph="..." />
+                <marker date="1609849398363" expanded="true" signature="109:118" ph="..." />
+                <marker date="1609849398363" expanded="true" signature="4278:4621" ph="..." />
               </folding>
             </state>
           </provider>
@@ -78,8 +74,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/equal.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="9" column="19" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
+            <state relative-caret-position="112">
+              <caret line="8" column="18" lean-forward="true" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ideal.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="88">
+              <caret line="10" column="39" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -90,6 +95,8 @@
     <findStrings>
       <find>print</find>
       <find>zi</find>
+      <find>round</find>
+      <find>pi</find>
     </findStrings>
     <replaceStrings>
       <replace>phi</replace>
@@ -105,6 +112,8 @@
         <option value="$PROJECT_DIR$/pyhmm-master/myhmm.py" />
         <option value="$PROJECT_DIR$/models/equal.json" />
         <option value="$PROJECT_DIR$/Test2.txt" />
+        <option value="$PROJECT_DIR$/equal.json" />
+        <option value="$PROJECT_DIR$/ideal.json" />
         <option value="$PROJECT_DIR$/forward_backward.py" />
       </list>
     </option>
@@ -136,6 +145,9 @@
     </panes>
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\univesity\foqelisans\farayand tasadofi\hw\HW3_98131059\HMM" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\univesity\foqelisans\farayand tasadofi\hw\HW3_98131059\HMM" />
     </key>
@@ -300,25 +312,31 @@
         <state relative-caret-position="-131" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/equal.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" column="19" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Test2.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/equal.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="8" column="18" lean-forward="true" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/forward_backward.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2116">
-          <caret column="11" selection-start-column="11" selection-end-column="11" />
+        <state relative-caret-position="726">
+          <caret line="120" column="26" lean-forward="true" selection-start-line="120" selection-start-column="26" selection-end-line="120" selection-end-column="26" />
           <folding>
-            <element signature="e#3765#4615#0" />
-            <marker date="1609846366218" expanded="true" signature="109:118" ph="..." />
-            <marker date="1609846366218" expanded="true" signature="4391:4564" ph="..." />
+            <marker date="1609849398363" expanded="true" signature="109:118" ph="..." />
+            <marker date="1609849398363" expanded="true" signature="4278:4621" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ideal.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="10" column="39" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
         </state>
       </provider>
     </entry>

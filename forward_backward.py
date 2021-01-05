@@ -22,7 +22,7 @@ class MyHmm(object):  # base class for different HMM models
         self.bwk = [{} for t in range(len(obs))]
         T = len(obs)
         # Initialize base cases (t == T)
-        for y in self.states: self.bwk[T - 1][y] = 1  # self.A[y]["Final"] #self.pi[y] * self.B[y][obs[0]]
+        for y in self.states: self.bwk[T - 1][y] = 1
         for t in reversed(range(T - 1)):
             for y in self.states:
                 self.bwk[t][y] = sum(
@@ -57,22 +57,21 @@ class MyHmm(object):  # base class for different HMM models
                     if t == len(obs) - 1: continue
                     phi[t][y] = {}
                     for y1 in self.states:
-                        phi[t][y][y1] = round(
-                            self.fwd[t][y] * self.A[y][y1] * self.B[y1][obs[t + 1]] * self.bwk[t + 1][y1] / p_obs, 4)
+                        phi[t][y][y1] = self.fwd[t][y] * self.A[y][y1] * self.B[y1][obs[t + 1]] * self.bwk[t + 1][y1] / p_obs
             # Maximization step : compute A and B
             for y in self.states:
                 # compute A
                 for y1 in self.states:
                     val = sum([phi[t][y][y1] for t in range(len(obs) - 1)])  #
                     val /= sum([landa[t][y] for t in range(len(obs) - 1)])
-                    self.A[y][y1] = round(val, 4)
+                    self.A[y][y1] = val
                 # compute B
                 for k in self.symbols:
                     val = 0.0
                     for t in range(len(obs)):
                         if obs[t] == k: val += landa[t][y]
                     val /= sum([landa[t][y] for t in range(len(obs))])
-                    self.B[y][k] = round(val, 4)
+                    self.B[y][k] = val
         return
 
     def viterbi(self, obs):
@@ -109,14 +108,18 @@ def get_observation(file_obs):
     return obs
 
 
-observations = get_observation("Test2.txt")
-print("Learning the model through Forward-Backward Algorithm for the observations", observations)
-hmm = MyHmm("equal.json")
-
-iteration = [1, 5, 10]
-for iter in iteration:
-    hmm.forward_backward(observations, iter)
+def print_model(hmm, iter):
     print("The new model parameters after " + str(iter) + " iteration are: ")
     print("A = ", hmm.A)
     print("B = ", hmm.B)
-    print("pi = ", hmm.pi)
+    print()
+
+
+observations = get_observation("Test2.txt")
+print("Learning the model through Forward-Backward Algorithm for the observations")#, observations)
+
+iteration = [50 ,100 ,200]
+for iter in iteration:
+    hmm = MyHmm("equal.json")
+    hmm.forward_backward(observations, iter)
+    print_model(hmm, iter)
