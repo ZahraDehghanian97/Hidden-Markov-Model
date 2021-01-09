@@ -1,10 +1,11 @@
 import json
+import numpy as np
 
 
 class MyHmm(object):  # base class for different HMM models
     def __init__(self, model_name):
         # model is (A, B, pi) where A = Transition probs, B = Emission Probs, pi = initial distribution
-        self.model = json.loads(open(model_name).read())["hmm"]
+        self.model = json.loads(open(model_name).read())
         self.A = self.model["A"]
         self.states = self.A.keys()  # get the list of states
         self.N = len(self.states)  # number of states of the model
@@ -43,6 +44,38 @@ class MyHmm(object):  # base class for different HMM models
         prob = sum((self.fwd[len(obs) - 1][s]) for s in self.states)
         return prob
 
+    def maximum_liklihood(self, data):
+        # compute pi
+        for y in self.pi:
+            counter = 0
+            all = 0
+            for d in data:
+                all +=1
+                if d[0] == y:
+                    counter += 1
+            self.pi[y] = counter/all
+        # compute A
+        for y in self.A :
+            today = y
+            for tomorrow in self.A[today]:
+                counter = 0
+                for i in range(len(data)-1) :
+                    if data[i][0] == today and data[i+1][0] == tomorrow :
+                        counter +=1
+                self.A[today][tomorrow] = counter/all
+        # compute B
+        for y in self.B :
+            for umbrella in self.B[y]:
+                counter = 0
+                all = 0
+                for i in range(len(data)) :
+                    if data[i][0] == y :
+                        all +=1
+                        if data[i][1] == umbrella :
+                            counter +=1
+                self.B[y][umbrella] = counter/all
+
+
     def forward_backward(self, obs, iteration):  # returns model given the initial model and observations
         for d in range(iteration):
             landa = [{} for t in range(len(obs))]
@@ -57,7 +90,8 @@ class MyHmm(object):  # base class for different HMM models
                     if t == len(obs) - 1: continue
                     phi[t][y] = {}
                     for y1 in self.states:
-                        phi[t][y][y1] = self.fwd[t][y] * self.A[y][y1] * self.B[y1][obs[t + 1]] * self.bwk[t + 1][y1] / p_obs
+                        phi[t][y][y1] = self.fwd[t][y] * self.A[y][y1] * self.B[y1][obs[t + 1]] * self.bwk[t + 1][
+                            y1] / p_obs
             # Maximization step : compute A and B
             for y in self.states:
                 # compute A
@@ -108,18 +142,45 @@ def get_observation(file_obs):
     return obs
 
 
+def get_all_data(file_obs):
+    file = open(file_obs)
+    obs = []
+    for line in file:
+        temp = []
+        words = line.split(",")
+        temp.append(words[0])
+        temp.append(words[1].split("\n")[0])
+        obs.append(temp)
+    return obs
+
+
 def print_model(hmm, iter):
-    print("The new model parameters after " + str(iter) + " iteration are: ")
+    if iter > 0:
+        print("The new model parameters after " + str(iter) + " iteration are: ")
+    else:
+        print("The new model parameters : ")
     print("A = ", hmm.A)
     print("B = ", hmm.B)
+    print("P = ",hmm.pi)
+    with open('data'+str(iter)+'.txt', 'w') as outfile:
+        hmm.model["A"] = hmm.A
+        hmm.model["B"] = hmm.B
+        hmm.model["pi"] = hmm.pi
+        json.dump(hmm.model , outfile)
     print()
 
 
+# part a
+data = get_all_data("Test2.txt")
+print("Learning the model with maximum liklihood for the observations")  # , observations)
+hmm1 = MyHmm("equal.json")
+hmm1.maximum_liklihood(data)
+print_model(hmm1, 0)
+# part b
 observations = get_observation("Test2.txt")
-print("Learning the model through Forward-Backward Algorithm for the observations")#, observations)
-
-iteration = [50 ,100 ,200]
+print("Learning the model through Forward-Backward Algorithm for the observations")  # , observations)
+iteration = [50]
 for iter in iteration:
-    hmm = MyHmm("equal.json")
-    hmm.forward_backward(observations, iter)
-    print_model(hmm, iter)
+    hmm2 = MyHmm("equal.json")
+    hmm2.forward_backward(observations, iter)
+    print_model(hmm2, iter)

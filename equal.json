@@ -1,17 +1,15 @@
 {
-    "hmm": 
-            {
-                "A": {
-                   "rainy" : {"rainy": 0.33, "foggy": 0.33, "sunny": 0.34},
-                   "foggy" : {"rainy": 0.33, "foggy": 0.33, "sunny": 0.34},
-                   "sunny" : {"rainy": 0.33, "foggy": 0.33, "sunny": 0.34}
-               },
-                "B": {
-                   "rainy" : {"no": 0.5, "yes": 0.5},
-                   "foggy" : {"no": 0.5, "yes": 0.5},
-                   "sunny" : {"no": 0.5, "yes": 0.5}
-                },
-                "pi": {"rainy": 0.33, "foggy": 0.33, "sunny": 0.34}
-            }
-        
+    "A": {
+       "rainy" : {"rainy": 0.33, "foggy": 0.33, "sunny": 0.34},
+       "foggy" : {"rainy": 0.33, "foggy": 0.33, "sunny": 0.34},
+       "sunny" : {"rainy": 0.33, "foggy": 0.33, "sunny": 0.34}
+   },
+    "B": {
+       "rainy" : {"no": 0.5, "yes": 0.5},
+       "foggy" : {"no": 0.5, "yes": 0.5},
+       "sunny" : {"no": 0.5, "yes": 0.5}
+    },
+    "pi": {"rainy": 0.33, "foggy": 0.33, "sunny": 0.34}
 }
+        
+
