@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="31c7a52a-0a55-414a-b0c7-dc3364aa888d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/learn_param.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/zdehg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/zdehg.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data0.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data0.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data50.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data50.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/equal.json" beforeDir="false" afterPath="$PROJECT_DIR$/equal.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/forward_backward.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ideal.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learn_param.py" beforeDir="false" afterPath="$PROJECT_DIR$/learn_param.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,38 +19,38 @@
     <session id="1881094000">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="2" />
           <entry key="project.open.time.0" value="2" />
           <entry key="project.opened" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="json" value="5" />
+          <entry key="json" value="6" />
           <entry key="py" value="3" />
-          <entry key="txt" value="4" />
+          <entry key="txt" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JSON" value="5" />
-          <entry key="PLAIN_TEXT" value="4" />
+          <entry key="JSON" value="6" />
+          <entry key="PLAIN_TEXT" value="5" />
           <entry key="Python" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="19" />
-          <entry key="json" value="113" />
-          <entry key="py" value="1680" />
+          <entry key="json" value="122" />
+          <entry key="py" value="1997" />
           <entry key="txt" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JSON" value="113" />
+          <entry key="JSON" value="122" />
           <entry key="PLAIN_TEXT" value="20" />
-          <entry key="Python" value="1680" />
+          <entry key="Python" value="1997" />
         </counts>
       </usages-collector>
     </session>
@@ -59,15 +60,29 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/learn_param.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
-              <caret line="186" lean-forward="true" selection-start-line="186" selection-end-line="186" />
+            <state relative-caret-position="2915">
+              <caret line="192" column="36" lean-forward="true" selection-start-line="192" selection-start-column="36" selection-end-line="192" selection-end-column="36" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
-                <marker date="1610207625633" expanded="true" signature="1868:1873" ph="..." />
-                <marker date="1610207625633" expanded="true" signature="1907:1912" ph="..." />
-                <marker date="1610207625633" expanded="true" signature="1907:1916" ph="..." />
-                <marker date="1610207625633" expanded="true" signature="1907:2901" ph="..." />
+                <marker date="1610211072587" expanded="true" signature="1868:1873" ph="..." />
+                <marker date="1610211072587" expanded="true" signature="1907:1912" ph="..." />
+                <marker date="1610211072587" expanded="true" signature="1907:1916" ph="..." />
+                <marker date="1610211072587" expanded="true" signature="1907:2991" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data50.txt">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/equal.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="242">
+              <caret line="11" column="57" selection-start-line="11" selection-start-column="57" selection-end-line="11" selection-end-column="57" />
             </state>
           </provider>
         </entry>
@@ -298,12 +313,12 @@
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24960254" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24960254" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.37477797" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.37833038" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -323,9 +338,6 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/pyhmm-master/test_hmm.py" />
     <entry file="file://$PROJECT_DIR$/models/coins1.json" />
-    <entry file="file://$PROJECT_DIR$/data50.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/data100.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -349,23 +361,26 @@
     <entry file="file://$PROJECT_DIR$/Test2.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/data50.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/equal.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="15" />
+        <state relative-caret-position="242">
+          <caret line="11" column="57" selection-start-line="11" selection-start-column="57" selection-end-line="11" selection-end-column="57" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/learn_param.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="186" lean-forward="true" selection-start-line="186" selection-end-line="186" />
+        <state relative-caret-position="2915">
+          <caret line="192" column="36" lean-forward="true" selection-start-line="192" selection-start-column="36" selection-end-line="192" selection-end-column="36" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
-            <marker date="1610207625633" expanded="true" signature="1868:1873" ph="..." />
-            <marker date="1610207625633" expanded="true" signature="1907:1912" ph="..." />
-            <marker date="1610207625633" expanded="true" signature="1907:1916" ph="..." />
-            <marker date="1610207625633" expanded="true" signature="1907:2901" ph="..." />
+            <marker date="1610211072587" expanded="true" signature="1868:1873" ph="..." />
+            <marker date="1610211072587" expanded="true" signature="1907:1912" ph="..." />
+            <marker date="1610211072587" expanded="true" signature="1907:1916" ph="..." />
+            <marker date="1610211072587" expanded="true" signature="1907:2991" ph="..." />
           </folding>
         </state>
       </provider>

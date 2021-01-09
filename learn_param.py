@@ -50,31 +50,33 @@ class MyHmm(object):  # base class for different HMM models
             counter = 0
             all = 0
             for d in data:
-                all +=1
+                all += 1
                 if d[0] == y:
                     counter += 1
-            self.pi[y] = counter/all
+            self.pi[y] = counter / all
         # compute A
-        for y in self.A :
+        for y in self.A:
             today = y
             for tomorrow in self.A[today]:
                 counter = 0
-                for i in range(len(data)-1) :
-                    if data[i][0] == today and data[i+1][0] == tomorrow :
-                        counter +=1
-                self.A[today][tomorrow] = counter/all
+                all = 0
+                for i in range(len(data) - 1):
+                    if data[i][0] == today :
+                        all+=1
+                        if data[i + 1][0] == tomorrow:
+                            counter += 1
+                self.A[today][tomorrow] = counter / all
         # compute B
-        for y in self.B :
+        for y in self.B:
             for umbrella in self.B[y]:
                 counter = 0
                 all = 0
-                for i in range(len(data)) :
-                    if data[i][0] == y :
-                        all +=1
-                        if data[i][1] == umbrella :
-                            counter +=1
-                self.B[y][umbrella] = counter/all
-
+                for i in range(len(data)):
+                    if data[i][0] == y:
+                        all += 1
+                        if data[i][1] == umbrella:
+                            counter += 1
+                self.B[y][umbrella] = counter / all
 
     def forward_backward(self, obs, iteration):  # returns model given the initial model and observations
         for d in range(iteration):
@@ -108,14 +110,28 @@ class MyHmm(object):  # base class for different HMM models
                     self.B[y][k] = val
         return
 
+    def print_model(self, iter):
+        if iter > 0:
+            print("The new model parameters after " + str(iter) + " iteration are: ")
+        else:
+            print("The new model parameters : ")
+        print("A = ", self.A)
+        print("B = ", self.B)
+        print("P = ", self.pi)
+        with open('data' + str(iter) + '.txt', 'w') as outfile:
+            self.model["A"] = self.A
+            self.model["B"] = self.B
+            self.model["pi"] = self.pi
+            json.dump(self.model, outfile)
+        print()
+
     def viterbi(self, obs):
         vit = [{}]
         path = {}
-        # Initialize base cases (t == 0)
+        n = 0
         for y in self.states:
             vit[0][y] = self.pi[y] * self.B[y][obs[0]]
             path[y] = [y]
-        # Run Viterbi for t > 0
         for t in range(1, len(obs)):
             vit.append({})
             newpath = {}
@@ -123,13 +139,10 @@ class MyHmm(object):  # base class for different HMM models
                 (prob, state) = max((vit[t - 1][y0] * self.A[y0][y] * self.B[y][obs[t]], y0) for y0 in self.states)
                 vit[t][y] = prob
                 newpath[y] = path[state] + [y]
-                # Don't need to remember the old paths
             path = newpath
-        n = 0  # if only one element is observed max is sought in the initialization values
-        if len(obs) != 1:
-            n = t
+            n += 1
         (prob, state) = max((vit[n][y], y) for y in self.states)
-        return (prob, path[state])
+        return prob, path[state]
 
 
 def get_observation(file_obs):
@@ -154,33 +167,29 @@ def get_all_data(file_obs):
     return obs
 
 
-def print_model(hmm, iter):
-    if iter > 0:
-        print("The new model parameters after " + str(iter) + " iteration are: ")
-    else:
-        print("The new model parameters : ")
-    print("A = ", hmm.A)
-    print("B = ", hmm.B)
-    print("P = ",hmm.pi)
-    with open('data'+str(iter)+'.txt', 'w') as outfile:
-        hmm.model["A"] = hmm.A
-        hmm.model["B"] = hmm.B
-        hmm.model["pi"] = hmm.pi
-        json.dump(hmm.model , outfile)
-    print()
-
-
 # part a
 data = get_all_data("Test2.txt")
+print("part a")
 print("Learning the model with maximum liklihood for the observations")  # , observations)
 hmm1 = MyHmm("equal.json")
 hmm1.maximum_liklihood(data)
-print_model(hmm1, 0)
+hmm1.print_model(0)
 # part b
 observations = get_observation("Test2.txt")
+print("part b")
 print("Learning the model through Forward-Backward Algorithm for the observations")  # , observations)
 iteration = [50]
 for iter in iteration:
     hmm2 = MyHmm("equal.json")
     hmm2.forward_backward(observations, iter)
-    print_model(hmm2, iter)
+    hmm2.print_model(iter)
+# part c
+print("part c")
+test_obs = ['no', 'no', 'no', 'yes', 'no', 'no', 'yes', 'yes', 'no', 'yes']
+print("observation :", test_obs)
+prob, hidden_states = hmm1.viterbi(test_obs)
+print("use generated HMM of part a")
+print("Max Probability = ", prob, " Hidden State Sequence = ", hidden_states)
+print("use generated HMM of part b")
+prob, hidden_states = hmm2.viterbi(test_obs)
+print("Max Probability = ", prob, " Hidden State Sequence = ", hidden_states)
